@@ -11,7 +11,8 @@ ENV JETTY_HOME=/opt/jetty-home \
     JETTY_MAX_HEAP=2048m \
     JETTY_BROWSER_SSL_KEYSTORE_PASSWORD=changeme \
     JETTY_BACKCHANNEL_SSL_KEYSTORE_PASSWORD=changeme \
-    PATH=$PATH:$JRE_HOME/bin
+    PATH=$PATH:$JRE_HOME/bin \
+    IDP_VERSION=3.3.2
 
 RUN yum -y update \
     && yum -y install wget tar which \
