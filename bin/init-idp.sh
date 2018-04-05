@@ -3,6 +3,11 @@
 export JAVA_HOME=/opt/jre-home
 export PATH=$PATH:$JAVA_HOME/bin
 
+cd /opt/shibboleth-idp
+rm -rf *
+cp -rp /opt/shibboleth-identity-provider-$IDP_VERSION/* /opt/shibboleth-idp/
+chmod -R 750 /opt/shibboleth-idp/*
+
 cd /opt/shibboleth-idp/bin
 
 # Remove existing config to build starts with an empty config
