@@ -59,7 +59,8 @@ RUN set -x; \
     && echo "$idp_hash  shibboleth-identity-provider-$idp_version.tar.gz" | sha256sum -c - \
     && tar -zxvf  shibboleth-identity-provider-$idp_version.tar.gz -C /opt \
     && rm /shibboleth-identity-provider-$idp_version.tar.gz \
-    && ln -s /opt/shibboleth-identity-provider-$idp_version/ /opt/shibboleth-idp \
+    && mkdir /opt/shibboleth-idp \
+    && cp -rp /opt/shibboleth-identity-provider-$idp_version/* /opt/shibboleth-idp/ \
 
 # Download the library to allow SOAP Endpoints, verify the hash, and place \
     && cd / \
